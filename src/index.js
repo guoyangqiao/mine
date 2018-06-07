@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Index = () => <div>Hello React!</div>;
+const user = {
+    name: 'utah',
+    password: 'cwuCCiwxwcantypS'
+};
 
-ReactDOM.render(<Index/>, document.getElementById("js"));
+function formatName(user) {
+    return user.name + ':' + user.password
+}
+
+ReactDOM.render(<div>hi, {formatName(user)}</div>, document.getElementById("js"));
