@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {element} from "./playground";
+import 'bootstrap/dist/css/bootstrap.css';
+import App from './app';
 
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
