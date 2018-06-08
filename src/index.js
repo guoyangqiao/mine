@@ -1,16 +1,15 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/cover.css'
+import ReactDOM from "react-dom";
+import {Clock} from "./js/clock";
 
+function render(id, element) {
+    ReactDOM.render(
+        element,
+        document.getElementById(id)
+    );
 
-class Clock extends React.Component {
-    render() {
-        return <h1>{new Date().toString()}</h1>;
-    }
 }
 
-ReactDOM.render(
-    <Clock/>,
-    document.getElementById('root')
-);
+render('timeclock', <Clock/>);
