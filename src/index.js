@@ -10,7 +10,6 @@ class Toggle extends React.Component {
         this.state = {
             toggle: true
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
@@ -21,7 +20,7 @@ class Toggle extends React.Component {
     }
 
     render() {
-        return (<button onClick={this.handleClick}>
+        return (<button onClick={e => this.handleClick(e)}>
             {this.state.toggle ? "ON" : "OFF"}
         </button>)
     }
