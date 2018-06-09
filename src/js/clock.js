@@ -21,7 +21,12 @@ export class Clock extends React.Component {
 
 
     render() {
-        return <div>{this.state.now.toString()}</div>;
+        return (
+            <table>
+                <div>{this.state.now.toLocaleDateString()}</div>
+                <div>{this.state.now.toLocaleTimeString()}</div>
+            </table>
+        );
     }
 }
 
