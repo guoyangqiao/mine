@@ -42,6 +42,9 @@ body {
     }
 }
 
-#beian {
-    color: #9f9f9f;
+.beian {
+    height: 20px;
+    line-height: 20px;
+    color: #939393;
+    font-size: 13px;
 }
