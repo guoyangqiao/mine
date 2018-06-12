@@ -2,10 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/cover.css'
 import ReactDOM from "react-dom";
-import {Toggle} from './js/toggle'
-
+import {Greeting} from './js/welcome'
 
 ReactDOM.render(
-    <Toggle/>,
+    <Greeting isLogin={false}/>,
     document.getElementById('root')
 );
