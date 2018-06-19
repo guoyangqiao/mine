@@ -5,22 +5,22 @@ import ReactDOM from "react-dom";
 import pccIcon from './images/ppc.png';
 import axios from 'axios';
 
-ReactDOM.render((<div>
-    <a target="_blank" href="http://www.miitbeian.gov.cn/">
-        <div class='beian'>沪ICP备18021834号</div>
-    </a>
-    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34132102000166">
-        <div class='beian'><img id src={pccIcon}/>皖公网安备 34132102000166号</div>
-    </a>
-</div>), document.getElementById('gov-watcher'));
-
-function render(id, element) {
+function renderId(id, element) {
     ReactDOM.render(
         element,
         document.getElementById(id)
     );
 
 }
+
+renderId('gov-watcher', (<div>
+    <a target="_blank" href="http://www.miitbeian.gov.cn/">
+        <div class='beian'>沪ICP备18021834号</div>
+    </a>
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34132102000166">
+        <div class='beian'><img id src={pccIcon}/>皖公网安备 34132102000166号</div>
+    </a>
+</div>));
 
 class PersonList extends React.Component {
 
