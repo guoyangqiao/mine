@@ -1,50 +1,36 @@
 import React from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/cover.css'
-import ReactDOM from "react-dom";
-import pccIcon from './images/ppc.png';
-import axios from 'axios';
-
-function renderId(id, element) {
-    ReactDOM.render(
-        element,
-        document.getElementById(id)
-    );
-
-}
-
-renderId('gov-watcher', (<div>
-    <a target="_blank" href="http://www.miitbeian.gov.cn/">
-        <div class='beian'>沪ICP备18021834号</div>
-    </a>
-    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34132102000166">
-        <div class='beian'><img id src={pccIcon}/>皖公网安备 34132102000166号</div>
-    </a>
-</div>));
+import './js/commons-function'
+import './js/commons-layout'
+import {renderId} from './js/commons-function'
 
 class PersonList extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            persons: []
+            date: ''
         }
     }
 
 
     componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/users`)
+        console.log('componentDidMount');
+        axios.get(`http://guoyangqiao.com/ms/moon/time/normal`)
             .then(res => {
-                const persons = res.data;
-                this.setState({persons});
+                let message = res.data.time;
+                this.setState({date: message});
             })
     }
 
     render() {
+        console.log(this.state);
         return (
-            <ul>
-                {this.state.persons.map(person => <li>{person.name}</li>)}
-            </ul>
+            <div>{this.state.date}</div>
         )
     }
 }
+
+renderId('root', <PersonList/>);
