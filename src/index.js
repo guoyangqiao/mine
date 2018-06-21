@@ -17,7 +17,6 @@ class PersonList extends React.Component {
 
 
     componentDidMount() {
-        console.log('componentDidMount');
         axios.get(`http://guoyangqiao.com/ms/moon/time/normal`)
             .then(res => {
                 let message = res.data.time;
@@ -26,7 +25,6 @@ class PersonList extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>{this.state.date}</div>
         )
